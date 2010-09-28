@@ -1,0 +1,15 @@
+- if params[:old_view]
+  - for file in @files
+    = link_to file.name, file.attachment.url
+    %br
+- else
+  %table
+    %tr
+      %th= t(:name)
+      %th= t(:format)
+      %th= t(:size)
+    - for file in @files
+      %tr
+        %td= link_to file.name, file.attachment.url
+        %td= file.attachment_file_name.split(".").last
+        %td= number_to_human_size(file.attachment_file_size)

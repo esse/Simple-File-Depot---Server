@@ -1,0 +1,25 @@
+- form_for @file, :html => { :multipart => true } do |f|
+  = f.error_messages
+  %p
+    = f.label t(:name)
+    %br
+    = f.text_field :name
+  %p
+    = f.label t(:subject)
+    %br
+    = f.collection_select(:subjects, PhilosophyFile.subject_list,:to_s, :to_s)
+
+  %p
+    = f.label t(:date)
+    %br
+    = f.collection_select(:dates, PhilosophyFile.dates_list,:to_s, :to_s)
+  %p
+    = f.label t(:'other_tags')
+    %br
+    = f.text_field :tag_list
+  %p
+    = f.label t(:file)
+    %br
+    = f.file_field :attachment
+  %p
+    = f.submit t(:add)

@@ -1,0 +1,18 @@
+.DS_Store
+_Store
+log/*.log
+tmp/**/*
+config/database.yml
+db/schema.rb
+nbproject
+*~
+Thumbs.db
+.idea
+coverage
+vendor/plugins/test_benchmark
+db/test.sqlite3
+#Vim temproart files
+*.swp
+tmp/restart.txt
+public/system
+.idea/

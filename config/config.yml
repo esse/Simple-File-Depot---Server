@@ -1,0 +1,16 @@
+site:
+  user: user
+  password: pw
+  title: Simple File Depot
+  feed_title: simplefiledepot.com
+  feed_author: Simple File Depot
+  dates:
+    - ""
+    - "2009-10-03"
+    - "2009-10-04"
+    - "2009-12-13"
+  subjects:
+    - ""
+    - Subject 1
+    - Subject 2
+    - Subject 3

@@ -1,0 +1,21 @@
+%h3= t(:'ten_newest') + ":"
+- for file in @newest
+  %td= link_to file.name, file.attachment.url
+
+%h3= t(:dates) + ":"
+- tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class|
+  - if PhilosophyFile.dates_list.include?(tag.name)
+    =link_to tag.name, tag_path(tag.name)
+%br
+%h3= t(:subjects) + ":"
+- tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class|
+  - if PhilosophyFile.subject_list.include?(tag.name)
+    =link_to tag.name, tag_path(tag.name)
+%h3= t(:'other_tags') + ":"
+- tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class|
+  - if !PhilosophyFile.subject_list.include?(tag.name) && !PhilosophyFile.dates_list.include?(tag.name)  
+    =link_to tag.name, tag_path(tag.name)
+%br
+%br
+= link_to t(:'add_file'), new_philosophy_file_path
+

@@ -1,0 +1,8 @@
+- title= t(:'edit_file')
+
+= render :partial => 'form'
+
+%p
+  = link_to t(:show), philosophy_file_path(@file)
+  |
+  = link_to t(:'view_all'), philosophy_files_path

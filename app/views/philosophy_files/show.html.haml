@@ -1,0 +1,9 @@
+%p
+  %strong= t(:name) + ":"
+  =h @file.name
+  %br
+  %strong= t(:'download_file') + ":"
+  = link_to t(:download), @file.attachment.url
+
+%p
+  = link_to t(:'see_all'), philosophy_files_path
